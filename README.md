@@ -28,7 +28,7 @@ Run atleast 3 brokers or else edit the KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR to
 Make sure you understand the listeners configuration and expose ports appropriately
 
 ### References
-Basic configuration reference [Confluent - Docker Configuration Parameters](https://docs.confluent.io/platform/current/installation/docker/config-reference.html)
-Connectivity [Why can't I connect to Kafka](https://www.confluent.io/blog/kafka-client-cannot-connect-to-broker-on-aws-on-docker-etc/)
-Kafka Listeners [Kafka listeners explained](https://www.confluent.io/blog/kafka-listeners-explained/)
+- Basic configuration reference [Confluent - Docker Configuration Parameters](https://docs.confluent.io/platform/current/installation/docker/config-reference.html)
+- Connectivity [Why can't I connect to Kafka](https://www.confluent.io/blog/kafka-client-cannot-connect-to-broker-on-aws-on-docker-etc/)
+- Kafka Listeners [Kafka listeners explained](https://www.confluent.io/blog/kafka-listeners-explained/)
 
