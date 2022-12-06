@@ -1,0 +1,150 @@
+version: "3"
+services:
+    # emqx_kafka_bridge:
+    #     container_name: emqx_kafka_bridge
+    #     image: emqx_kafka_bridge:latest
+    #     env_file:
+    #         - ./emqx_kafka_bridge.env
+    #     restart: on-failure
+    #     depends_on:
+    #         kafdrop:
+    #             condition: service_healthy
+    # um_server:
+    #     container_name: um_server
+    #     image: um_server:latest
+    #     ports:
+    #         - "5040:80"
+    #     env_file:
+    #         - ./um_server.env
+    #     healthcheck:
+    #         test: "curl localhost:80/ping"
+    #         interval: "300s"
+    #         timeout: "3s"
+    #         start_period: "3s"
+    #         retries: 3
+    #     depends_on:
+    #         kafdrop:
+    #             condition: service_healthy
+    http_kafka_server:
+        container_name: http_kafka_server
+        image: http_kafka_server:latest
+        ports:
+            - "5010:80"
+        env_file:
+            - ./http_kafka_server.env
+        healthcheck:
+            test: "curl localhost:80/ping"
+            interval: "300s"
+            timeout: "3s"
+            start_period: "3s"
+            retries: 3
+        depends_on:
+            kafdrop:
+                condition: service_healthy
+    # message_to_node:
+    #     container_name: message_to_node
+    #     image: message_to_node:latest
+    #     env_file:
+    #         - ./message_node_map.env
+    #     restart: on-failure
+    #     depends_on:
+    #         kafdrop:
+    #             condition: service_healthy
+
+    # message_aggregator:
+    #     container_name: message_aggregator
+    #     image: message_aggregator:latest
+    #     env_file:
+    #         - ./node_message_agregator.env
+    #     restart: on-failure
+    #     depends_on:
+    #         kafdrop:
+    #             condition: service_healthy
+    # node_status:
+    #     container_name: node_status
+    #     image: node_status:latest
+    #     env_file:
+    #         - ./node_status_service.env
+    #     restart: on-failure
+    #     depends_on:
+    #         kafdrop:
+    #             condition: service_healthy
+    # notification_generation_logic:
+    #     container_name: notification_generation_logic
+    #     image: notification_generation_logic:latest
+    #     env_file:
+    #         - ./notification_generation_logic.env
+    #     restart: on-failure
+    #     depends_on:
+    #         kafdrop:
+    #             condition: service_healthy
+    # node_user_map:
+    #     container_name: node_user_map
+    #     image: node_user_map:latest
+    #     env_file:
+    #         - ./node_user_mapper.env
+    #     restart: on-failure
+    #     depends_on:
+    #         kafdrop:
+    #             condition: service_healthy
+    # notification_scheduler:
+    #     container_name: notification_scheduler
+    #     image: notification_scheduler:latest
+    #     env_file:
+    #         - ./notification_scheduler.env
+    #     restart: on-failure
+    #     depends_on:
+    #         kafdrop:
+    #             condition: service_healthy
+    # notification_sender:
+    #     container_name: notification_sender
+    #     image: notification_sender:latest
+    #     env_file:
+    #         - ./notification_sender.env
+    #     restart: on-failure
+    #     depends_on:
+    #         kafdrop:
+    #             condition: service_healthy
+    # checklist_interceptor:
+    #     container_name: checklist_interceptor
+    #     image: checklist_interceptor:latest
+    #     env_file:
+    #         - ./checklist_interceptor.env
+    #     restart: on-failure
+    #     depends_on:
+    #         kafdrop:
+    #             condition: service_healthy
+    # error_handler:
+    #     container_name: error_handler
+    #     image: error_handler:latest
+    #     env_file:
+    #         - ./error_handler.env
+    #     restart: on-failure
+    #     depends_on:
+    #         kafdrop:
+    #             condition: service_healthy
+    # http2mqtt:
+    #     container_name: http2mqtt
+    #     image: http2mqtt:latest
+    #     ports:
+    #         - "3020:80"
+    #     env_file:
+    #         - ./http2mqtt.env
+    #     healthcheck:
+    #         test: "curl localhost:80/ping"
+    #         interval: "300s"
+    #         timeout: "3s"
+    #         start_period: "3s"
+    #         retries: 3
+    #     depends_on:
+    #         kafdrop:
+    #             condition: service_healthy
+    # email_sender:
+    #     container_name: email_sender
+    #     image: email_sender:latest
+    #     env_file:
+    #         - ./email_sender.env
+    #     restart: on-failure
+    #     depends_on:
+    #         kafdrop:
+    #             condition: service_healthy

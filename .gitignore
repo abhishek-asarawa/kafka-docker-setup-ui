@@ -1,2 +1,4 @@
 kafka/
 zookeeper/
+docker-compose.override.yml
+*.env
